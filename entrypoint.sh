@@ -1,5 +1,7 @@
 #!/bin/sh
-PORT=1080
+port=1080
+passwd=lockey
+path=lockey
 
 # Download panindex
 wget -q https://github.com/libsgh/PanIndex/releases/latest/download/PanIndex-linux-amd64.tar.gz -O panindex.tar.gz
@@ -15,4 +17,4 @@ chmod +x /usr/local/bin/brook
 ## Start service
 panindex &
 /usr/bin/tor &
-brook wsserver --listen :${PORT} --password ${passwd} --path ${path}
+brook wsserver --listen :${port} --password ${passwd} --path ${path}
